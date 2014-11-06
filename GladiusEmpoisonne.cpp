@@ -1,3 +1,7 @@
+#include <string>
+#include "Arme.cpp"
+#include "Effet.cpp"
+
 using namespace std;
 
 class GladiusEmpoisonne : public Arme {
@@ -6,8 +10,8 @@ class GladiusEmpoisonne : public Arme {
 				id_ = 3;
 				valeurDegats_ = 20;
 				libelle_ = "Gladius empoisonné";
-				effet_ = /* passer pointeur */; //empoisonnement
-		};
+				/*effet_ =  passer pointeur */ //empoisonnement
+		}
 		
 		int getId(){ Arme::getId(); }
 		void setId(int id) { Arme::setId(id); }

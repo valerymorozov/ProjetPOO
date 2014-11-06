@@ -1,3 +1,6 @@
+#include <string>
+#include "Type.cpp"
+
 using namespace std;
 
 class Dimachaerus : public Type {
@@ -5,7 +8,7 @@ class Dimachaerus : public Type {
 		Dimachaerus(){
 				id_ = 1;
 				libelle_ = "Dimachaerus";
-		};
+		}
 		
 		int getId(){ return id_; }
 		void setId(int id){ id_ = id; }
@@ -15,5 +18,5 @@ class Dimachaerus : public Type {
 	private :
 		int id_;
 		string libelle_;
-}
+};
 

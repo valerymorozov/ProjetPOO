@@ -1,3 +1,6 @@
+#include <string>
+#include "Type.cpp"
+
 using namespace std;
 
 class Murmillo : public Type {
@@ -15,5 +18,5 @@ class Murmillo : public Type {
 	private :
 		int id_;
 		string libelle_;
-}
+};
 

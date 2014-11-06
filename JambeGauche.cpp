@@ -1,3 +1,6 @@
+#include <string>
+#include "Membre.cpp"
+
 using namespace std;
 
 class JambeGauche : public Membre {
@@ -21,4 +24,4 @@ class JambeGauche : public Membre {
 		int id_, pdv_;
 		string libelle_;
 		Equipement equip_;
-}
+};

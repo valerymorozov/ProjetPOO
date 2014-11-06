@@ -1,3 +1,5 @@
+#include <string>
+
 using namespace std;
 
 class Type{
@@ -12,4 +14,4 @@ class Type{
 	private :
 		int id_;
 		string libelle_;
-}
+};

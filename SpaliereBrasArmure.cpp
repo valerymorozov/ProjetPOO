@@ -1,12 +1,15 @@
+#include <string>
+#include "Equipement.cpp"
+
 using namespace std;
 
 class SpaliereBrasArmure : public Equipement {
 	public :
 		SpaliereBrasArmure()
 		{ 
-			id = 1;
-			libelle = "Spalière - Bras d'armure";
-			valeurDefense = 30; 
+			id_ = 1;
+			libelle_ = "Spalière - Bras d'armure";
+			valeurDefense_ = 30; 
 		}
 		
 		int getId(){ Equipement::getId(); }
@@ -19,4 +22,4 @@ class SpaliereBrasArmure : public Equipement {
 	private :
 		int id_, valeurDefense_;
 		string libelle_;
-}
+};

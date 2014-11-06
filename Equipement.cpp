@@ -1,3 +1,5 @@
+#include <string>
+
 using namespace std;
 
 class Equipement {
@@ -10,7 +12,6 @@ class Equipement {
 		void setLibelle(string l) { libelle_ = l; }
 		int getValDef(){ return valeurDefense_; }
 		void setValDef(int v) { valeurDefense_ = v; }
-	
 	private :
 		int id_, valeurDefense_;
 		string libelle_;

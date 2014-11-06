@@ -1,3 +1,6 @@
+#include <string>
+#include "Type.cpp"
+
 using namespace std;
 
 class Thraex : public Type {
@@ -15,5 +18,5 @@ class Thraex : public Type {
 	private :
 		int id_;
 		string libelle_;
-}
+};
 

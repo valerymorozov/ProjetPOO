@@ -6,4 +6,4 @@ class Jeu{
 		
 	private :
 		
-}
+};

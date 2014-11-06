@@ -1,3 +1,6 @@
+#include <string>
+#include "Type.cpp"
+
 using namespace std;
 
 class Personnage{
@@ -18,4 +21,4 @@ class Personnage{
 		Type type_;
 		int membres[];
 		int effetsActifs[];
-}
+};

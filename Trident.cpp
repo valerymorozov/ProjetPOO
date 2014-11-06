@@ -1,3 +1,6 @@
+#include <string>
+#include "Arme.cpp"
+
 using namespace std;
 
 class Trident : public Arme {
@@ -6,9 +9,9 @@ class Trident : public Arme {
 				id_ = 4;
 				valeurDegats_ = 30;
 				libelle_ = "Trident";
-		};
+		}
 		
-		int getId(){ Arme::getId(id); }
+		int getId(){ Arme::getId(); }
 		void setId(int id) { Arme::setId(id); }
 		string getLibelle(){ Arme::getLibelle(); }
 		void setLibelle(string l) { Arme::setLibelle(l); }

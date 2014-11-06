@@ -1,3 +1,6 @@
+#include <string>
+#include "Arme.cpp"
+
 using namespace std;
 
 class Gladius : public Arme {
@@ -6,7 +9,7 @@ class Gladius : public Arme {
 				id_ = 3;
 				valeurDegats_ = 20;
 				libelle_ = "Gladius";
-		};
+		}
 		
 		int getId(){ Arme::getId(); }
 		void setId(int id) { Arme::setId(id); }

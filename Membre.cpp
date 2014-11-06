@@ -1,3 +1,6 @@
+#include <string>
+#include "Equipement.cpp"
+
 using namespace std;
 
 class Membre {
@@ -17,4 +20,4 @@ class Membre {
 		int id_, pdv_;
 		string libelle_;
 		Equipement equip_;
-}
+};

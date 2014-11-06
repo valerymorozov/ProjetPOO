@@ -1,3 +1,6 @@
+#include <string>
+#include "Effet.cpp"
+
 using namespace std;
 
 class Saignement : public Effet {

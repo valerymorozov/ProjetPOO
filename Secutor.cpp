@@ -1,11 +1,14 @@
+#include <string>
+#include "Arme.cpp"
+
 using namespace std;
 
-class Secutor : public Type {
+class Secutor : public Arme {
 	public :
 		Secutor(){
 				id_ = 6;
 				libelle_ = "Secutor";
-		};
+		}
 		
 		int getId(){ return id_; }
 		void setId(int id){ id_ = id; }
@@ -15,5 +18,5 @@ class Secutor : public Type {
 	private :
 		int id_;
 		string libelle_;
-}
+};
 
