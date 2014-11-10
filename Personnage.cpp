@@ -1,11 +1,28 @@
 #include <string>
 #include "Type.cpp"
+#include "Membre.cpp"
 
 using namespace std;
 
 class Personnage{
 	public :
-		Personnage();
+		Personnage(Type type){
+			type_ = type;
+			
+			Membre brasG = new BrasGauche();
+			Membre brasD = new BrasDroit();
+			Membre tete = new Tete();
+			Membre torse = new Torse();
+			Membre jambeG = new JambeGauche();
+			Membre jambeD = new JambeDroite();
+			
+			membres[0] = brasG.getId();
+			membres[1] = brasD.getId();
+			membres[2] = tete.getId();
+			membres[3] = torse.getId();
+			membres[4] = jambeG.getId();
+			membres[5] = jambeD.getId();
+		};
 		
 		int getId(){ return id_; }
 		void setId(int id){ id_ = id; }
@@ -13,14 +30,12 @@ class Personnage{
 		void setPDV(int p){ pdv_ = p; }
 		string getNom(){ return nom_; }
 		void setNom(string l){ nom_ = l; }
-		type_ = /* passer le type */
 		void ajouterMembres(){ }
-		/* effetsActifs à 0, sujet à modification pdt la partie */
 		
 	private :
 		int id_, pdv_;
 		string nom_;
-		Type* type_;
-		int membres[];
-		int effetsActifs[];
+		Type type_;
+		int[] membres;
+		int[] effetsActifs;
 };
