@@ -4,8 +4,6 @@ using namespace std;
 
 class Arme {
 	public :
-		Arme();
-		
 		int getId(){ return id_; }
 		void setId(int id) { id_ = id; }
 		string getLibelle(){ return libelle_; }

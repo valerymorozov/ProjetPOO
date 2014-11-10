@@ -13,14 +13,14 @@ class Personnage{
 		void setPDV(int p){ pdv_ = p; }
 		string getNom(){ return nom_; }
 		void setNom(string l){ nom_ = l; }
-		/* passer le type */
-		/* ajouter les membres */
+		type_ = /* passer le type */
+		void ajouterMembres(){ }
 		/* effetsActifs à 0, sujet à modification pdt la partie */
 		
 	private :
 		int id_, pdv_;
 		string nom_;
-		Type type_;
+		Type* type_;
 		int membres[];
 		int effetsActifs[];
 };
