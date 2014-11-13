@@ -8,11 +8,27 @@ using namespace std;
 
 class Personnage : public IAffichage {
 	public :
-		Personnage(int id, string nom, Type type){
+		Personnage(int id, string nom, int type){
 			type_ = type;
 			nom_ = nom;
-			pdv_ = 333;
+			pdv_ = 333; //val arbitraire
 			
+			ajouterMembres();
+			switch (type)
+			{
+				
+			}
+		};
+		
+		int getId(){ return id_; }
+		void setId(int id){ id_ = id; }
+		int getPDV(){ return pdv_; }
+		void setPDV(int p){ pdv_ = p; }
+		string getNom(){ return nom_; }
+		void setNom(string l){ nom_ = l; }
+		
+		void ajouterMembres()
+		{ 
 			Membre brasG = new BrasGauche();
 			Membre brasD = new BrasDroit();
 			Membre tete = new Tete();
@@ -26,21 +42,27 @@ class Personnage : public IAffichage {
 			membres[3] = torse.getId();
 			membres[4] = jambeG.getId();
 			membres[5] = jambeD.getId();
-		};
+		}
 		
-		int getId(){ return id_; }
-		void setId(int id){ id_ = id; }
-		int getPDV(){ return pdv_; }
-		void setPDV(int p){ pdv_ = p; }
-		string getNom(){ return nom_; }
-		void setNom(string l){ nom_ = l; }
-		void ajouterMembres(){ }
 		void afficherInfo()
 		{
 			cout << "Personnage " << nom_ << " :\n" << endl;
-			cout << "   Type : " << type_::afficherInfo() << " :\n" << endl;
-			cout << "   PDV restants : " << pdv_ << " :\n" << endl;
-			if (effetsActifs.isE
+			cout << type_::afficherInfo() << " :\n" << endl;
+			cout << "PDV restants : " << pdv_ << " :\n" << endl;
+			if (membres[0]!=null)
+			{
+				for (Membre m : membres)
+				{
+					m.afficherInfo();
+				}
+			}
+			if (effetsActifs[0]!=null){
+				cout << "Effet(s) actif(s) : " << "\n" << endl;
+				for (Effet e : effetsActifs)
+				{
+					e.afficherInfo();
+				}
+			}
 		}
 		
 	private :

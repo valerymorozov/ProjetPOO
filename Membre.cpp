@@ -1,3 +1,4 @@
+#include <iostream>
 #include <string>
 #include "Equipement.cpp"
 #include "IAffichage.cpp"
@@ -14,6 +15,11 @@ class Membre : public IAffichage {
 		void setLibelle(string l) { libelle_ = l; }
 		Equipement getEquip(){ return equip_; };
 		Equipement setEquip(Equipement e){ equip_ = e; };
+		
+		void afficherInfo()
+		{
+			cout << libelle_ << " : " << " PDV restants : " << pdv_ << " Equipement : " << equip.afficherInfo() << "\n" << endl;
+		}
 		
 	private :
 		int id_, pdv_;

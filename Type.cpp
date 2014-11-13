@@ -1,3 +1,4 @@
+#include <iostream>
 #include <string>
 #include "IAffichage.cpp"
 
@@ -9,9 +10,10 @@ class Type : public IAffichage {
 		void setId(int id){ id_ = id; }
 		string getLibelle(){ return libelle_; }
 		void setLibelle(string l){ libelle_ = l; }
+		
 		void afficherInfo()
 		{
-			cout << libelle_ << "\n" << endl;
+			cout << "Type : " << libelle_ << "\n" << endl;
 		}
 		
 	private :
