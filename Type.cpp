@@ -11,7 +11,7 @@ class Type : public IAffichage {
 		void setLibelle(string l){ libelle_ = l; }
 		void afficherInfo()
 		{
-			cout << "Libellé : " << libelle_ << "\n" << endl;
+			cout << libelle_ << "\n" << endl;
 		}
 		
 	private :

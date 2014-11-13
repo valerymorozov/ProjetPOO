@@ -1,6 +1,9 @@
 ProjetPOO
 =========
 
+##### Questions :
+	- 
+
 ##### TODO :
 	- Penser à mettre régulièrement l'UML (DCC) à jour
 	
@@ -10,7 +13,7 @@ ProjetPOO
 ##### Patterns :
 	Rien n'est fixe, ce ne sont que des propositions pour l'instant
 	
-	# STATE (et/ou OBSERVER) :
+	# STATE :
 	interviendrait lorsqu'un Personnage subit un effet 
 	
 	# FACTORY :

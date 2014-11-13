@@ -38,7 +38,7 @@ class Personnage : public IAffichage {
 		void afficherInfo()
 		{
 			cout << "Personnage " << nom_ << " :\n" << endl;
-			cout << "   Type : " << type_::getLibelle() << " :\n" << endl;
+			cout << "   Type : " << type_::afficherInfo() << " :\n" << endl;
 			cout << "   PDV restants : " << pdv_ << " :\n" << endl;
 			if (effetsActifs.isE
 		}
