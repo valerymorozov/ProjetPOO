@@ -1,12 +1,11 @@
 #include <string>
 #include "Equipement.cpp"
+#include "IAffichage.cpp"
 
 using namespace std;
 
-class Membre {
-	public :
-		Membre();
-		
+class Membre : public IAffichage {
+	public :	
 		int getId(){ return id_; }
 		void setId(int id) { id_ = id; }
 		int getPDV(){ return pdv_; }

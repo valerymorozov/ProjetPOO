@@ -1,11 +1,10 @@
 #include <string>
+#include "IAffichage.cpp"
 
 using namespace std;
 
-class Effet {
+class Effet : public IAffichage {
 	public :
-		Effet();
-		
 		int getId(){ return id_; }
 		void setId(int id) { id_ = id; }
 		string getLibelle(){ return libelle_; }

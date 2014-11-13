@@ -1,8 +1,9 @@
 #include <string>
+#include "IAffichage.cpp"
 
 using namespace std;
 
-class Arme {
+class Arme : public IAffichage{
 	public :
 		int getId(){ return id_; }
 		void setId(int id) { id_ = id; }

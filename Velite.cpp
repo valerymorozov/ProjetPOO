@@ -3,11 +3,11 @@
 
 using namespace std;
 
-class Velites : public Type {
+class Velite : public Type {
 	public :
-		Velites(){
+		Velite(){
 				id_ = 4;
-				libelle_ = "Velites";
+				libelle_ = "Velite";
 		};
 		
 		int getId(){ return id_; }

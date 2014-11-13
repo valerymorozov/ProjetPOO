@@ -1,13 +1,17 @@
+#include <iostream>
 #include <string>
 #include "Type.cpp"
 #include "Membre.cpp"
+#include "IAffichage.cpp"
 
 using namespace std;
 
-class Personnage{
+class Personnage : public IAffichage {
 	public :
-		Personnage(Type type){
+		Personnage(int id, string nom, Type type){
 			type_ = type;
+			nom_ = nom;
+			pdv_ = 333;
 			
 			Membre brasG = new BrasGauche();
 			Membre brasD = new BrasDroit();
@@ -31,11 +35,18 @@ class Personnage{
 		string getNom(){ return nom_; }
 		void setNom(string l){ nom_ = l; }
 		void ajouterMembres(){ }
+		void afficherInfo()
+		{
+			cout << "Personnage " << nom_ << " :\n" << endl;
+			cout << "   Type : " << type_::getLibelle() << " :\n" << endl;
+			cout << "   PDV restants : " << pdv_ << " :\n" << endl;
+			if (effetsActifs.isE
+		}
 		
 	private :
 		int id_, pdv_;
 		string nom_;
 		Type type_;
-		int[] membres;
+		int membres[6];
 		int[] effetsActifs;
 };
