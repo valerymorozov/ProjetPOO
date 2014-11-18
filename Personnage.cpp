@@ -26,6 +26,8 @@ class Personnage : public IAffichage {
 		void setPDV(int p){ pdv_ = p; }
 		string getNom(){ return nom_; }
 		void setNom(string l){ nom_ = l; }
+		int getType(){ return type_; }
+		void setType(int t){ type_ = t; }
 		
 		void ajouterMembres()
 		{ 
@@ -65,10 +67,17 @@ class Personnage : public IAffichage {
 			}
 		}
 		
+		void porterCoup(int idPerso){
+			
+		}
+		
+		void prendreCoup(int idMembreVise){
+			
+		}
+		
 	private :
-		int id_, pdv_;
+		int id_, pdv_, type_;
 		string nom_;
-		Type type_;
 		int membres[6];
 		int[] effetsActifs;
 };
