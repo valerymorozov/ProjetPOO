@@ -9,21 +9,41 @@ class Jeu {
 	public :
 		Jeu()
 		{
+			//màj le dernier idPerso courant
+			recupLastId();
+		}
+		
+		//récupère le dernier idPerso courant à partir du fichier
+		void recupLastId(){
 			ifstream fichier;
 			fichier.open("lastIdPerso.txt");
-			int input[1];
-			if (myReadFile.is_open()) {
-				while (!myReadFile.eof()) {
+			if (fichier.is_open()) {
+				while (!fichier.eof()) {
 					fichier >> lastIdPerso_;
 				}
 			} else {
-				cout << "Impossible d'ouvrir le fichier !" << endl;
+				cout << "Impossible d'ouvrir le fichier pour lire!" << endl;
 			}
 			fichier.close();
-			
-			afficherMenuPrincipal();
 		}
-	
+		
+		//met à jour le dernier idPerso courant dans le fichier
+		void majLastId(int i){
+			ofstream fichier;
+			fichier.open("lastIdPerso.txt");
+			if (fichier.is_open()) {
+				fichier << i << endl;
+			} else {
+				cout << "Impossible d'ouvrir le fichier pour écrire!" << endl;
+			}
+			fichier.close();
+		}
+		
+		//recupère les données à partir du fichier et crée les persos
+		void recupPerso(){
+			
+		}
+		
 		void afficherMenuPrincipal()
 		{
 			int valMenu;
@@ -59,6 +79,7 @@ class Jeu {
 			string nomPerso;
 			int numType;
 			
+			//choix des nom/type du nouveau perso à créer
 			cout << "**************************" << endl;
 			cout << "* Création de personnage *" << endl;
 			cout << "**************************\n" << endl;
@@ -74,7 +95,25 @@ class Jeu {
 			cout << "6 - Secutor\n" << endl;
 			cin >> numType;
 			
-			p1 = new Personnage(nomPerso, numType);
+			//enregistrement du Personnage créé dans le fichier
+			enregistrerNouveauPerso((lastIdPerso_+1), nom, numType);
+			
+			//mise à jour du dernier idPerso
+			majLastId(lastIdPerso_+1);
+			lastIdPerso_ += 1;
+		}
+		
+		void enregistrerNouveauPerso(int id, string nom, int type){
+			ofstream fichier;
+			fichier.open("archivePersos.txt");
+			if (fichier.is_open()) {
+				while (!fichier.eof()) {
+					fichier << id << ";" << nom << ";" << type << endl;
+				}
+			} else {
+				cout << "Impossible d'ouvrir le fichier pour écrire!" << endl;
+			}
+			fichier.close();
 		}
 		
 		void afficherInfo()
@@ -137,6 +176,10 @@ class Jeu {
 		void setJoueurCourant(int i)
 		{
 			joueurCourant_ = i;
+		}
+		//****** MAIN ******
+		int main(){
+			afficherMenuPrincipal();
 		}
 		
 	private :

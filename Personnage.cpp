@@ -6,6 +6,11 @@
 
 using namespace std;
 
+/*
+ * Format d'enregistrement d'un Personnage dans le fichier archivePersos.txt
+ * idPerso, nomPerso, idType
+ */
+
 class Personnage : public IAffichage {
 	public :
 		Personnage(int id, string nom, int type){
@@ -14,7 +19,7 @@ class Personnage : public IAffichage {
 			pdv_ = 333; //val arbitraire
 			
 			ajouterMembres();
-			switch (type)
+			switch (type)//assigner type
 			{
 				
 			}
