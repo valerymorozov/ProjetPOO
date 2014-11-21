@@ -11,7 +11,7 @@ class Type : public IAffichage {
 		string getLibelle(){ return libelle_; }
 		void setLibelle(string l){ libelle_ = l; }
 		
-		void afficherInfo()
+		virtual void afficherInfo()
 		{
 			cout << "Type : " << libelle_ << "\n" << endl;
 		}

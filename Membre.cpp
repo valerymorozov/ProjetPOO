@@ -16,7 +16,7 @@ class Membre : public IAffichage {
 		Equipement getEquip(){ return equip_; };
 		Equipement setEquip(Equipement e){ equip_ = e; };
 		
-		void afficherInfo()
+		virtual void afficherInfo()
 		{
 			cout << libelle_ << " : " << " PDV restants : " << pdv_ << " Equipement : " << equip.afficherInfo() << "\n" << endl;
 		}

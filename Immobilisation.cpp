@@ -16,12 +16,12 @@ class Immobilisation : public Effet {
 		void setId(int id) { Effet::setId(id); }
 		string getLibelle(){ Effet::getLibelle(); }
 		void setLibelle(string l) { Effet::setLibelle(l); }
-		int getMaxStack(){ Effet::getMaxStack(); }
-		void setMaxStack(int mS){ Effet::setMaxStack(mS); }
+		/*int getMaxStack(){ Effet::getMaxStack(); }
+		void setMaxStack(int mS){ Effet::setMaxStack(mS); }*/
 		int getNbToursMax(){ Effet::getNbToursMax(); }
 		void setNbToursMax(int n){ Effet::setNbToursMax(n); }
 	
 	private :
-		int id_, maxStack_, nbToursMax_;
+		int id_,/* maxStack_,*/ nbToursMax_;
 		string libelle_;
 };

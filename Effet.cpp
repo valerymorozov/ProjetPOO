@@ -15,7 +15,7 @@ class Effet : public IAffichage {
 		int getNbToursMax(){ return nbToursMax_; }
 		void setNbToursMax(int n){ nbToursMax_ = n;}
 		
-		void afficherInfo()
+		virtual void afficherInfo()
 		{
 			cout << libelle_ << "\n" << endl;
 		}

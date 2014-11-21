@@ -13,7 +13,7 @@ class Equipement : public IAffichage {
 		int getValDef(){ return valeurDefense_; }
 		void setValDef(int v) { valeurDefense_ = v; }
 		
-		void afficherInfo()
+		virtual void afficherInfo()
 		{
 			cout << libelle_ << " Valeur de défense : " << valeurDefense_ << "\n" << endl;
 		}
