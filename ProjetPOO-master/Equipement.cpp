@@ -1,8 +1,10 @@
 #include <iostream>
 #include <string>
-#include "IAffichage.cpp"
+#include "IAffichage.hpp"
 
 using namespace std;
+
+#pragma once
 
 class Equipement : public IAffichage {
 	public :

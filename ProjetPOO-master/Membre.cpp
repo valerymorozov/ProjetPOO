@@ -1,9 +1,11 @@
 #include <iostream>
 #include <string>
 #include "Equipement.cpp"
-#include "IAffichage.cpp"
+#include "IAffichage.hpp"
 
 using namespace std;
+
+#pragma once
 
 class Membre : public IAffichage {
 	public :	
@@ -18,7 +20,9 @@ class Membre : public IAffichage {
 		
 		virtual void afficherInfo()
 		{
-			cout << libelle_ << " : " << " PDV restants : " << pdv_ << " Equipement : " << equip.afficherInfo() << "\n" << endl;
+			cout << libelle_ << " : " << " PDV restants : " << pdv_ << " Equipement : " << endl;
+			equip_.afficherInfo();
+			cout << "\n" << endl;
 		}
 		
 	private :

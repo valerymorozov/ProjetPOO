@@ -1,11 +1,11 @@
 #include <iostream>
 #include <fstream>
-#include "IAffichage.cpp"
+#include "IAffichage.hpp"
 #include "Personnage.cpp"
 
 using namespace std;
 
-class Jeu {
+class Jeu : public IAffichage {
 	public :
 		Jeu()
 		{

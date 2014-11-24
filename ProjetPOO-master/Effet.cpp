@@ -1,8 +1,10 @@
 #include <iostream>
 #include <string>
-#include "IAffichage.cpp"
+#include "IAffichage.hpp"
 
 using namespace std;
+
+#pragma once
 
 class Effet : public IAffichage {
 	public :
@@ -10,8 +12,6 @@ class Effet : public IAffichage {
 		void setId(int id) { id_ = id; }
 		string getLibelle(){ return libelle_; }
 		void setLibelle(string l) { libelle_ = l; }
-		/*int getMaxStack(){ return maxStack_; }
-		void setMaxStack(int mS){ maxStack_ = mS; }*/
 		int getNbToursMax(){ return nbToursMax_; }
 		void setNbToursMax(int n){ nbToursMax_ = n;}
 		
@@ -21,6 +21,6 @@ class Effet : public IAffichage {
 		}
 	
 	private :
-		int id_, /*maxStack_, */nbToursMax_;
+		int id_, nbToursMax_;
 		string libelle_;
 };

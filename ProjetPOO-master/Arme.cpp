@@ -1,8 +1,10 @@
 #include <string>
 #include <iostream>
-#include "IAffichage.cpp"
+#include "IAffichage.hpp"
 
 using namespace std;
+
+#pragma once
 
 class Arme : public IAffichage{
 	public :
