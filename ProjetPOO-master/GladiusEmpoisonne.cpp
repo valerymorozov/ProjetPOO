@@ -5,6 +5,8 @@
 
 using namespace std;
 
+#pragma once
+
 class GladiusEmpoisonne : public Arme {
 	public :
 		GladiusEmpoisonne(){

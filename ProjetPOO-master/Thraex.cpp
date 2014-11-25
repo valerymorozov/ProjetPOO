@@ -4,6 +4,8 @@
 
 using namespace std;
 
+#pragma once
+
 class Thraex : public Type {
 	public :
 		Thraex(){

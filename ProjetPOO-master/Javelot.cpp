@@ -4,6 +4,8 @@
 
 using namespace std;
 
+#pragma once
+
 class Javelot : public Arme {
 	public :
 		Javelot(){

@@ -1,5 +1,8 @@
 #include <iostream>
 #include <fstream>
+#include <string>
+#include <stdlib.h>
+#include <cstdlib>
 #include "IAffichage.hpp"
 #include "Personnage.cpp"
 
@@ -46,6 +49,7 @@ class Jeu : public IAffichage {
 		
 		void afficherMenuPrincipal()
 		{
+			string vM;
 			int valMenu;
 			
 			cout << "******************" << endl;
@@ -57,26 +61,38 @@ class Jeu : public IAffichage {
 			cout << "3 - Quitter" << endl;
 			cout << "\n" << endl;
 			
-			cin >> valMenu;
+			getline(cin, vM);
+			valMenu = atoi(vM.c_str());
 			cout << "\n" << endl;
 			
 			switch (valMenu){
 				case 1:
+				{
 					commencerPartie();
 					break;
+				}
 				case 2:
+				{
 					creerPersonnage();
 					break;
+				}
 				case 3:
-					exit(EXIT_SUCCESS);
+				{
+					exit(0);
+					cout << "Programme quitté avec succès." << endl;
 					break;
+				}
 				default:
+				{
+					commencerPartie();
+					break;
+				}
 			}
 		}
 		
 		void creerPersonnage()
 		{
-			string nomPerso;
+			string nomPerso, nT;
 			int numType;
 			
 			//choix des nom/type du nouveau perso à créer
@@ -84,7 +100,7 @@ class Jeu : public IAffichage {
 			cout << "* Création de personnage *" << endl;
 			cout << "**************************\n" << endl;
 			cout << "Entrez un nom de personnage (chaîne de caractères) : \n" << endl;
-			cin >> nom;
+			getline(cin, nomPerso);
 			cout << "\n" << endl;
 			cout << "Sélectionnez un type de personnage : \n" << endl;
 			cout << "1 - Dimachaerus" << endl;
@@ -93,10 +109,11 @@ class Jeu : public IAffichage {
 			cout << "4 - Velite" << endl;
 			cout << "5 - Thraex" << endl;
 			cout << "6 - Secutor\n" << endl;
-			cin >> numType;
+			getline(cin, nT);
+			numType = atoi(nT.c_str());
 			
 			//enregistrement du Personnage créé dans le fichier
-			enregistrerNouveauPerso((lastIdPerso_+1), nom, numType);
+			enregistrerNouveauPerso((lastIdPerso_+1), nomPerso, numType);
 			
 			//mise à jour du dernier idPerso
 			majLastId(lastIdPerso_+1);
@@ -121,10 +138,11 @@ class Jeu : public IAffichage {
 			cout << "***************" << endl;
 			cout << "* Personnages *" << endl;
 			cout << "***************\n" << endl;
-
-			for (Personnage p : personnages)
+			
+			int i = 0;
+			for (i; i<6; ++i)
 			{
-				p.afficherInfo();
+				personnages[i]->afficherInfo();
 				cout << "_______________" << endl;
 			}
 		}
@@ -135,32 +153,39 @@ class Jeu : public IAffichage {
 			cout << "* Sélection des personnages *" << endl;
 			cout << "*****************************\n" << endl;
 			
-			
-			int j1;
+			string j;
+			int joueur;
 			
 			cout << "<Que les Dieux soient avec vous Gladiateurs ! La gloire ou la mort !>" << endl;
 			cout << "<Quel joueur commence ?>\n" << endl;
-			cin << j1 << endl;
+			getline(cin, j);
+			joueur = atoi(j.c_str());
 			
-			switch (j1){
+			switch (joueur){
 				case 1:
-					this.setJoueurCourant(personnages[0].getId());
+				{
+					this->setJoueurCourant(personnages[0]->getId());
 					cout << "[J1 commence]" << endl;
 					break;
+				}
 				case 2:
-					this.setJoueurCourant(personnages[1].getId());
-					cout << "[J1 commence]" << endl;
+				{
+					this->setJoueurCourant(personnages[1]->getId());
+					cout << "[J2 commence]" << endl;
 					break;
+				}
 				default:
-					this.setJoueurCourant(personnages[0].getId());
+				{
+					this->setJoueurCourant(personnages[0]->getId());
 					cout << "[J1 commence]" << endl;
 					break;
+				}
 			}
 		}
 		
 		bool isJoueurCourant(int idPerso)
 		{
-			if (idPerso == joueurCourant)
+			if (idPerso == joueurCourant_)
 			{
 				return true;
 			} else {

@@ -4,6 +4,8 @@
 
 using namespace std;
 
+#pragma once
+
 class Dague : public Arme {
 	public :
 		Dague(){

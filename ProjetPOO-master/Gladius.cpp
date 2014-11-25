@@ -4,6 +4,8 @@
 
 using namespace std;
 
+#pragma once
+
 class Gladius : public Arme {
 	public :
 		Gladius(){

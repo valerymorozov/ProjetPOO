@@ -4,6 +4,8 @@
 
 using namespace std;
 
+#pragma once
+
 class Velite : public Type {
 	public :
 		Velite(){

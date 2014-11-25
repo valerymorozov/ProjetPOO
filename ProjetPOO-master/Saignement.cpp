@@ -4,6 +4,8 @@
 
 using namespace std;
 
+#pragma once
+
 class Saignement : public Effet {
 	public :
 		Saignement(){

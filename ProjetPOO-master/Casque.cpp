@@ -4,6 +4,8 @@
 
 using namespace std;
 
+#pragma once
+
 class Casque : public Equipement {
 	public :
 		Casque()

@@ -4,6 +4,8 @@
 
 using namespace std;
 
+#pragma once
+
 class Dimachaerus : public Type {
 	public :
 		Dimachaerus(){

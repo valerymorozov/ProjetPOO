@@ -26,6 +26,9 @@ using namespace std;
 
 class Personnage : public IAffichage {
 	public :
+		enum types {DIMACHAERUS = 1, RETIARIUS = 2, MURMILLO = 3, 
+				VELITE = 4, THRAEX = 5, SECUTOR = 6};
+		
 		Personnage(int id, string nom, int type){
 			id_ = id;
 			nom_ = nom;
@@ -35,30 +38,42 @@ class Personnage : public IAffichage {
 			ajouterMembres();
 			switch (type)//assignation du type
 			{
-				case 1:
-					Dimachaerus* typeP = new Dimachaerus();
+				case DIMACHAERUS:
+				{
+					Type* typeP = new Dimachaerus();
 					p_type = typeP;
 					break;
-				case 2:
-					Retiarius* typeP = new Retiarius();
+				}
+				case RETIARIUS:
+				{
+					Type* typeP = new Retiarius();
 					p_type = typeP;
 					break;
-				case 3:
-					Murmillo* typeP = new Murmillo();
+				}
+				case MURMILLO:
+				{
+					Type* typeP = new Murmillo();
 					p_type = typeP;
 					break;
-				case 4:
-					Velite* typeP = new Velite();
+				}
+				case VELITE:
+				{
+					Type* typeP = new Velite();
 					p_type = typeP;
 					break;
-				case 5:
-					Thraex* typeP = new Thraex();
+				}
+				case THRAEX:
+				{
+					Type* typeP = new Thraex();
 					p_type = typeP;
 					break;
-				case 6:
-					Secutor* typeP = new Secutor();
+				}
+				case SECUTOR:
+				{
+					Type* typeP = new Secutor();
 					p_type = typeP;
 					break;
+				}
 			}
 		};
 		
@@ -68,8 +83,8 @@ class Personnage : public IAffichage {
 		void setPDV(int p){ pdv_ = p; }
 		string getNom(){ return nom_; }
 		void setNom(string l){ nom_ = l; }
-		int getType(){ return type_; }
-		void setType(int t){ type_ = t; }
+		Type* getType(){ return p_type; }
+		//void setType(Type* t){ p_type = t; }
 		
 		void ajouterMembres()
 		{ 
@@ -80,7 +95,12 @@ class Personnage : public IAffichage {
 			JambeGauche* p_jambeG = new JambeGauche();
 			JambeDroite* p_jambeD = new JambeDroite();
 			
-			membres = {brasG, brasD, tete, torse, jambeG, jambeD};
+			membres[0] = p_brasG;
+			membres[1] = p_brasD;
+			membres[2] = p_tete;
+			membres[3] = p_torse;
+			membres[4] = p_jambeG;
+			membres[5] = p_jambeD;
 		}
 		
 		void ajouterEffetActif()
@@ -93,20 +113,21 @@ class Personnage : public IAffichage {
 			cout << "Personnage " << nom_ << " :\n" << endl;
 			p_type->afficherInfo();
 			cout << "PDV restants : " << pdv_ << " :\n" << endl;
-			if (membres[0]!=null)
+			if (membres[0]!=NULL)
 			{
-				brasG->afficherInfo();
-				brasD->afficherInfo();
-				tete->afficherInfo();
-				torse->afficherInfo();
-				jambeG->afficherInfo();
-				jambeD->afficherInfo();
+				membres[0]->afficherInfo();
+				membres[1]->afficherInfo();
+				membres[2]->afficherInfo();
+				membres[3]->afficherInfo();
+				membres[4]->afficherInfo();
+				membres[5]->afficherInfo();
 			}
-			if (effetsActifs[0]!=null){
+			if (effetsActifs[0]!=NULL){
 				cout << "Effet(s) actif(s) : " << "\n" << endl;
-				for (int i = 0, i<3, ++i)
+				int i = 0;
+				for (i; i<3; ++i)
 				{
-					if(effetsActifs[i]!=null){
+					if(effetsActifs[i]!=NULL){
 						effetsActifs[i]->afficherInfo();
 					}
 				}

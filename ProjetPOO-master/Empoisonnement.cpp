@@ -4,6 +4,8 @@
 
 using namespace std;
 
+#pragma once
+
 class Empoisonnement : public Effet {
 	public :
 		Empoisonnement(){

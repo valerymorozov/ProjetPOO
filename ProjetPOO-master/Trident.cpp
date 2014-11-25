@@ -4,6 +4,8 @@
 
 using namespace std;
 
+#pragma once
+
 class Trident : public Arme {
 	public :
 		Trident(){

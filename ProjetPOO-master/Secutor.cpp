@@ -1,10 +1,12 @@
 #include <string>
 #include <iostream>
-#include "Arme.cpp"
+#include "Type.cpp"
 
 using namespace std;
 
-class Secutor : public Arme {
+#pragma once
+
+class Secutor : public Type {
 	public :
 		Secutor(){
 				id_ = 6;

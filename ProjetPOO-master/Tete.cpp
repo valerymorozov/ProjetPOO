@@ -4,6 +4,8 @@
 
 using namespace std;
 
+#pragma once
+
 class Tete : public Membre {
 	public :
 		Tete(){

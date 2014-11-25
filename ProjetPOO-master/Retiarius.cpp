@@ -4,6 +4,8 @@
 
 using namespace std;
 
+#pragma once
+
 class Retiarius : public Type {
 	public :
 		Retiarius(){

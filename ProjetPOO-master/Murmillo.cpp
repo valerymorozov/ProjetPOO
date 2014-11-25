@@ -4,6 +4,8 @@
 
 using namespace std;
 
+#pragma once
+
 class Murmillo : public Type {
 	public :
 		Murmillo(){

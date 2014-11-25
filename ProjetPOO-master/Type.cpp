@@ -8,6 +8,7 @@ using namespace std;
 
 class Type : public IAffichage {
 	public :
+		Type(){}
 		int getId(){ return id_; }
 		void setId(int id){ id_ = id; }
 		string getLibelle(){ return libelle_; }

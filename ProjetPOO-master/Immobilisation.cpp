@@ -4,6 +4,8 @@
 
 using namespace std;
 
+#pragma once
+
 class Immobilisation : public Effet {
 	public :
 		Immobilisation(){
