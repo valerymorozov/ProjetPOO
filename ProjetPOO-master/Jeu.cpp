@@ -52,14 +52,12 @@ class Jeu : public IAffichage {
 			string vM;
 			int valMenu;
 			
-			cout << "******************" << endl;
+			cout << "\n******************" << endl;
 			cout << "* Menu principal *" << endl;
-			cout << "******************" << endl;
-			cout << "\n" << endl;
+			cout << "******************\n" << endl;
 			cout << "1 - Combattre" << endl;
 			cout << "2 - Créer un personnage" << endl;
 			cout << "3 - Quitter" << endl;
-			cout << "\n" << endl;
 			
 			getline(cin, vM);
 			valMenu = atoi(vM.c_str());
@@ -78,8 +76,8 @@ class Jeu : public IAffichage {
 				}
 				case 3:
 				{
+					cout << "A la prochaine tentative d'évasion, 300 coups de fouets esclave!" << endl;
 					exit(0);
-					cout << "Programme quitté avec succès." << endl;
 					break;
 				}
 				default:
@@ -96,46 +94,47 @@ class Jeu : public IAffichage {
 			int numType;
 			
 			//choix des nom/type du nouveau perso à créer
-			cout << "**************************" << endl;
+			cout << "\n**************************" << endl;
 			cout << "* Création de personnage *" << endl;
 			cout << "**************************\n" << endl;
 			cout << "Entrez un nom de personnage (chaîne de caractères) : \n" << endl;
 			getline(cin, nomPerso);
-			cout << "\n" << endl;
-			cout << "Sélectionnez un type de personnage : \n" << endl;
+			cout << "\nSélectionnez un type de personnage : \n" << endl;
 			cout << "1 - Dimachaerus" << endl;
 			cout << "2 - Retiarius" << endl;
 			cout << "3 - Murmillo" << endl;
 			cout << "4 - Velite" << endl;
 			cout << "5 - Thraex" << endl;
-			cout << "6 - Secutor\n" << endl;
+			cout << "6 - Secutor" << endl;
 			getline(cin, nT);
 			numType = atoi(nT.c_str());
+			cout << "\nBienvenue dans l'arène combattant " << nomPerso << " !\n" << endl;
 			
 			//enregistrement du Personnage créé dans le fichier
 			enregistrerNouveauPerso((lastIdPerso_+1), nomPerso, numType);
 			
 			//mise à jour du dernier idPerso
 			majLastId(lastIdPerso_+1);
-			lastIdPerso_ += 1;
+			lastIdPerso_ += 1;//persistance de lastIdPerso_
+			
+			afficherMenuPrincipal();//réaffichage du menu principal
 		}
 		
 		void enregistrerNouveauPerso(int id, string nom, int type){
 			ofstream fichier;
 			fichier.open("archivePersos.txt");
 			if (fichier.is_open()) {
-				while (!fichier.eof()) {
 					fichier << id << ";" << nom << ";" << type << endl;
-				}
+					fichier.close();
+				
 			} else {
 				cout << "Impossible d'ouvrir le fichier pour écrire!" << endl;
 			}
-			fichier.close();
 		}
 		
 		void afficherInfo()
 		{
-			cout << "***************" << endl;
+			cout << "\n***************" << endl;
 			cout << "* Personnages *" << endl;
 			cout << "***************\n" << endl;
 			
@@ -208,7 +207,9 @@ class Jeu : public IAffichage {
 		int joueurCourant_, lastIdPerso_; //id du Personnage en train de jouer, id du dernier Personnage créé
 };
 
-//****** MAIN ******
+/* *****************
+ ****** MAIN *******
+ ***************** */
 int main(){
 	Jeu* jeu = new Jeu();
 	jeu->afficherMenuPrincipal();

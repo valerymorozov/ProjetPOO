@@ -15,6 +15,9 @@
 #include "Murmillo.cpp"
 #include "Secutor.cpp"
 #include "Thraex.cpp"
+#include "Immobilisation.cpp"
+#include "Saignement.cpp"
+#include "Empoisonnement.cpp"
 #include "IAffichage.hpp"
 
 using namespace std;
@@ -24,12 +27,15 @@ using namespace std;
  * idPerso, nomPerso, idType
  */
 
-class Personnage : public IAffichage {
+class Personnage : public IAffichage 
+{
 	public :
 		enum types {DIMACHAERUS = 1, RETIARIUS = 2, MURMILLO = 3, 
 				VELITE = 4, THRAEX = 5, SECUTOR = 6};
+		enum etats {POISON = 1, BLEED = 2, ROOT = 3};
 		
-		Personnage(int id, string nom, int type){
+		Personnage(int id, string nom, int type)
+		{
 			id_ = id;
 			nom_ = nom;
 			pdv_ = 333; //valeur arbitraire
@@ -84,7 +90,23 @@ class Personnage : public IAffichage {
 		string getNom(){ return nom_; }
 		void setNom(string l){ nom_ = l; }
 		Type* getType(){ return p_type; }
-		//void setType(Type* t){ p_type = t; }
+		int getIndexLastEffet(){ return indexLastEffet_; }
+		void setIndexLastEffet(int e)
+		{ 
+			/* Tableau de correspondance
+			 * 
+			 * indexLastEffet_     |   0   |1|2|3|
+			 * 					   ----V----V-V-V-
+			 * indice effetsActifs |tableau|0|1|2|
+			 * 						 vide
+			 * 						  ou
+			 * 						 plein
+			 */
+			if(e != 0 && e <= 3)
+			{
+				indexLastEffet_ = e;
+			} 
+		}
 		
 		void ajouterMembres()
 		{ 
@@ -103,9 +125,78 @@ class Personnage : public IAffichage {
 			membres[5] = p_jambeD;
 		}
 		
-		void ajouterEffetActif()
+		void ajouterEffetActif(int effet)
 		{
-			
+			Effet* p_effet;
+			switch (effet)
+			{
+				case POISON:
+				{
+					p_effet = new Empoisonnement();
+					if(indexLastEffet_ == 0)
+					{
+						effetsActifs[0] = p_effet;
+						++indexLastEffet_;
+					} else if(indexLastEffet_ == 1)
+					{
+						effetsActifs[1] = p_effet;
+						++indexLastEffet_;
+					} else if(indexLastEffet_ == 2)
+					{
+						effetsActifs[2] = p_effet;
+						++indexLastEffet_;
+					} else if(indexLastEffet_ == 3)
+					{
+						effetsActifs[0] = p_effet;
+						indexLastEffet_ = 0;
+					}
+					break;
+				}
+				case BLEED:
+				{
+					p_effet = new Saignement();
+					if(indexLastEffet_ == 0)
+					{
+						effetsActifs[0] = p_effet;
+						++indexLastEffet_;
+					} else if(indexLastEffet_ == 1)
+					{
+						effetsActifs[1] = p_effet;
+						++indexLastEffet_;
+					} else if(indexLastEffet_ == 2)
+					{
+						effetsActifs[2] = p_effet;
+						++indexLastEffet_;
+					} else if(indexLastEffet_ == 3)
+					{
+						effetsActifs[0] = p_effet;
+						indexLastEffet_ = 0;
+					}
+					break;
+				}
+				case ROOT:
+				{
+					p_effet = new Immobilisation();
+					if(indexLastEffet_ == 0)
+					{
+						effetsActifs[0] = p_effet;
+						++indexLastEffet_;
+					} else if(indexLastEffet_ == 1)
+					{
+						effetsActifs[1] = p_effet;
+						++indexLastEffet_;
+					} else if(indexLastEffet_ == 2)
+					{
+						effetsActifs[2] = p_effet;
+						++indexLastEffet_;
+					} else if(indexLastEffet_ == 3)
+					{
+						effetsActifs[0] = p_effet;
+						indexLastEffet_ = 0;
+					}
+					break;
+				}
+			}
 		}
 		
 		void afficherInfo()
@@ -143,9 +234,9 @@ class Personnage : public IAffichage {
 		}
 		
 	private :
-		int id_, pdv_;
+		int id_, pdv_, indexLastEffet_ = 0;
 		string nom_;
 		Type* p_type;
 		Membre* membres[6];
-		Effet* effetsActifs[3];
+		Effet* effetsActifs[3];//queue FIFO d'effets actifs 
 };
