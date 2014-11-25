@@ -202,12 +202,14 @@ class Jeu : public IAffichage {
 		{
 			joueurCourant_ = i;
 		}
-		//****** MAIN ******
-		int main(){
-			afficherMenuPrincipal();
-		}
 		
 	private :
 		Personnage *personnages[2]; //les 2 Personnages de la partie
 		int joueurCourant_, lastIdPerso_; //id du Personnage en train de jouer, id du dernier Personnage créé
 };
+
+//****** MAIN ******
+int main(){
+	Jeu* jeu = new Jeu();
+	jeu->afficherMenuPrincipal();
+}
