@@ -19,6 +19,7 @@
 #include "Saignement.cpp"
 #include "Empoisonnement.cpp"
 #include "IAffichage.hpp"
+#include <cstdlib>
 
 using namespace std;
 
@@ -40,6 +41,7 @@ class Personnage : public IAffichage
 			nom_ = nom;
 			pdv_ = 333; //valeur arbitraire
 			p_type = NULL;
+			indexLastEffet_ = 0;
 			
 			ajouterMembres();
 			switch (type)//assignation du type
@@ -225,18 +227,15 @@ class Personnage : public IAffichage
 			}
 		}
 		
-		void porterCoup(int idPerso){
-			
-		}
-		
 		void prendreCoup(int idMembreVise){
-			
+			//if(this->membres[0].getId()==
 		}
 		
 	private :
-		int id_, pdv_, indexLastEffet_ = 0;
+		int id_, pdv_, indexLastEffet_;
 		string nom_;
 		Type* p_type;
+		Personnage* p_ennemi;
 		Membre* membres[6];
 		Effet* effetsActifs[3];//queue FIFO d'effets actifs 
 };

@@ -76,7 +76,7 @@ class Jeu : public IAffichage {
 				}
 				case 3:
 				{
-					cout << "A la prochaine tentative d'évasion, 300 coups de fouets esclave!" << endl;
+					cout << "A la prochaine tentative d'évasion, 300 coups de fouets esclave!\n" << endl;
 					exit(0);
 					break;
 				}
@@ -100,12 +100,12 @@ class Jeu : public IAffichage {
 			cout << "Entrez un nom de personnage (chaîne de caractères) : \n" << endl;
 			getline(cin, nomPerso);
 			cout << "\nSélectionnez un type de personnage : \n" << endl;
-			cout << "1 - Dimachaerus" << endl;
-			cout << "2 - Retiarius" << endl;
-			cout << "3 - Murmillo" << endl;
-			cout << "4 - Velite" << endl;
-			cout << "5 - Thraex" << endl;
-			cout << "6 - Secutor" << endl;
+			cout << "1 - Dimachaerus\nEquipé de 2 Gladius(épée courte).\nBénéficie d'une bonne protection." << endl;
+			cout << "2 - Retiarius\nEquipé d'un Trident et d'un Filet, lui permettant d'immobiliser l'ennemi.\nBénéficie d'une protection légère." << endl;
+			cout << "3 - Murmillo\nEquipé d'un Gladius et d'un bouclier ovale Oblong lui permettant de\nbloquer des coups portés par l'adversaire.\nBénéficie d'une protection moyenne." << endl;
+			cout << "4 - Velite\nEquipé d'une Lance à 2 mains.\nBénéficie d'une protection moyenne." << endl;
+			cout << "5 - Thraex\nEquipé d'une Sica(épée courte courbée) et d'un bouclier rond Parmula\n lui permettant de bloquer des coups portés par l'adversaire.\nBénéficie d'une protection moyenne." << endl;
+			cout << "6 - Secutor\nEquipé de 2 Dagues.\nBénéficie d'une bonne protection." << endl;
 			getline(cin, nT);
 			numType = atoi(nT.c_str());
 			cout << "\nBienvenue dans l'arène combattant " << nomPerso << " !\n" << endl;
@@ -122,7 +122,7 @@ class Jeu : public IAffichage {
 		
 		void enregistrerNouveauPerso(int id, string nom, int type){
 			ofstream fichier;
-			fichier.open("archivePersos.txt");
+			fichier.open("archivePersos.txt", ofstream::app);
 			if (fichier.is_open()) {
 					fichier << id << ";" << nom << ";" << type << endl;
 					fichier.close();
@@ -130,6 +130,14 @@ class Jeu : public IAffichage {
 			} else {
 				cout << "Impossible d'ouvrir le fichier pour écrire!" << endl;
 			}
+		}
+		
+		void selectionPersos(){
+				
+		}
+		
+		void constructionPerso(int id){
+			
 		}
 		
 		void afficherInfo()
@@ -151,6 +159,8 @@ class Jeu : public IAffichage {
 			cout << "*****************************" << endl;
 			cout << "* Sélection des personnages *" << endl;
 			cout << "*****************************\n" << endl;
+			
+			
 			
 			string j;
 			int joueur;
@@ -200,6 +210,17 @@ class Jeu : public IAffichage {
 		void setJoueurCourant(int i)
 		{
 			joueurCourant_ = i;
+		}
+		
+		void porterCoup(int idPerso, int idMembre){
+			int i = 0;
+			for(i; i<2; ++i)
+			{
+				if(personnages[i]->getId()==idPerso)
+				{
+					personnages[i]->prendreCoup(idMembre);
+				}
+			}
 		}
 		
 	private :
