@@ -3,6 +3,7 @@
 #include <string>
 #include <stdlib.h>
 #include <cstdlib>
+#include <sstream>
 #include "IAffichage.hpp"
 #include "Personnage.cpp"
 
@@ -10,6 +11,9 @@ using namespace std;
 
 class Jeu : public IAffichage {
 	public :
+		enum types {DIMACHAERUS = 1, RETIARIUS = 2, MURMILLO = 3, 
+				VELITE = 4, THRAEX = 5, SECUTOR = 6};
+	
 		Jeu()
 		{
 			//màj le dernier idPerso courant
@@ -103,7 +107,7 @@ class Jeu : public IAffichage {
 			cout << "1 - Dimachaerus\nEquipé de 2 Gladius(épée courte).\nBénéficie d'une bonne protection." << endl;
 			cout << "2 - Retiarius\nEquipé d'un Trident et d'un Filet, lui permettant d'immobiliser l'ennemi.\nBénéficie d'une protection légère." << endl;
 			cout << "3 - Murmillo\nEquipé d'un Gladius et d'un bouclier ovale Oblong lui permettant de\nbloquer des coups portés par l'adversaire.\nBénéficie d'une protection moyenne." << endl;
-			cout << "4 - Velite\nEquipé d'une Lance à 2 mains.\nBénéficie d'une protection moyenne." << endl;
+			cout << "4 - Velite\nEquipé d'un Javelot à 2 mains.\nBénéficie d'une protection moyenne." << endl;
 			cout << "5 - Thraex\nEquipé d'une Sica(épée courte courbée) et d'un bouclier rond Parmula\n lui permettant de bloquer des coups portés par l'adversaire.\nBénéficie d'une protection moyenne." << endl;
 			cout << "6 - Secutor\nEquipé de 2 Dagues.\nBénéficie d'une bonne protection." << endl;
 			getline(cin, nT);
@@ -132,12 +136,8 @@ class Jeu : public IAffichage {
 			}
 		}
 		
-		void selectionPersos(){
+		void chargementPersos(){
 				
-		}
-		
-		void constructionPerso(int id){
-			
 		}
 		
 		void afficherInfo()
@@ -156,12 +156,121 @@ class Jeu : public IAffichage {
 		
 		void commencerPartie()
 		{
-			cout << "*****************************" << endl;
-			cout << "* Sélection des personnages *" << endl;
-			cout << "*****************************\n" << endl;
+			cout << "******************************" << endl;
+			cout << "* Sélection du personnage J1 *" << endl;
+			cout << "******************************\n" << endl;
 			
+			//lecture du fichier Persos & affichage des Persos dispo
+			ifstream fichier;
+			string entrees[3];
+			int cptNbPersos = 0;
 			
+			fichier.open("archivePersos.txt");
+			if (fichier.is_open()) {
+				while (!fichier.eof()) {
+					string ligne;
+					getline(fichier, ligne);
+					stringstream ss(ligne);
+					string champ;
+					for(int i = 0;i<3;++i)
+					{
+						getline(ss,champ,';');
+						entrees[i] = champ;
+					}
+					if(entrees[0]!="\0")
+					{	
+						int s = stoi(entrees[3]);
+						switch(s)
+						{
+							case DIMACHAERUS:
+							{
+								cout << entrees[0] << " - " << entrees[1] << " : Dimachaerus" << endl;
+								++cptNbPersos;
+								break;
+							}
+							case RETIARIUS:
+							{
+								cout << entrees[0] << " - " << entrees[1] << " : Retiarius" << endl;
+								++cptNbPersos;
+								break;
+							}
+							case MURMILLO:
+							{
+								cout << entrees[0] << " - " << entrees[1] << " : Murmillo" << entrees[2] << endl;
+								++cptNbPersos;
+								break;
+							}
+							case VELITE:
+							{
+								cout << entrees[0] << " - " << entrees[1] << " : Velite" << entrees[2] << endl;
+								++cptNbPersos;
+								break;
+							}
+							case THRAEX:
+							{
+								cout << entrees[0] << " - " << entrees[1] << " : Thraex" << entrees[2] << endl;
+								++cptNbPersos;
+								break;
+							}
+							case SECUTOR:
+							{
+								cout << entrees[0] << " - " << entrees[1] << " : Secutor" << entrees[2] << endl;
+								++cptNbPersos;
+								break;
+							}
+						}
+					}
+				}
+			} else {
+				cout << "Impossible d'ouvrir le fichier pour lire!" << endl;
+			}
+			fichier.close();
+			cout << "\n" << endl;
+			/*
+			string sM;
+			int selecMenu;
 			
+			getline(cin, sM);
+			selecMenu = atoi(sM.c_str());
+
+			if(selecMenu<=cptNbPersos)
+			{
+				int typeP;
+				typeP = atoi(entrees[2]);
+				Personnage* j1 = new Personnage(selecMenu, entrees[1], typeP);
+				personnages[0] = j1;
+			}
+			
+			cptNbPersos = 0;
+			
+			cout << "******************************" << endl;
+			cout << "* Sélection du personnage J2 *" << endl;
+			cout << "******************************\n" << endl;
+			
+			fichier.open("archivePersos.txt");
+			if (fichier.is_open()) {
+				while (!fichier.eof()) {
+					fichier.getline(entrees, 256, ';');
+					cout << entrees[0] << " - " << entrees[1] << " : " << entrees[2] << endl;
+					++cptNbPersos;
+				}
+			} else {
+				cout << "Impossible d'ouvrir le fichier pour lire!" << endl;
+			}
+			fichier.close();
+			cout << "\n" << endl;
+			
+			getline(cin, sM);
+			selecMenu = atoi(sM.c_str());
+			
+			if(selecMenu<=cptNbPersos)
+			{
+				int typeP;
+				typeP = atoi(entrees[2].c_str());
+				Personnage* j2 = new Personnage(selecMenu, entrees[1], typeP);
+				personnages[1] = j2;
+			}
+			*/
 			string j;
 			int joueur;
 			
