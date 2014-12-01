@@ -3,5 +3,6 @@ var searchData=
   ['jambedroite',['JambeDroite',['../class_jambe_droite.html#a22f040786d3645d93c29c131b4041237',1,'JambeDroite']]],
   ['jambegauche',['JambeGauche',['../class_jambe_gauche.html#a306ff75914909ceccf6bb47a6f00aa34',1,'JambeGauche']]],
   ['jambiere',['Jambiere',['../class_jambiere.html#a392269ea14d42c8cd78352e963fdc401',1,'Jambiere']]],
-  ['javelot',['Javelot',['../class_javelot.html#ab98542adcc1824a91579544f4d9c0004',1,'Javelot']]]
+  ['javelot',['Javelot',['../class_javelot.html#ab98542adcc1824a91579544f4d9c0004',1,'Javelot']]],
+  ['jeu',['Jeu',['../class_jeu.html#acc5795ee00edf75516d3dfe65be3e6d6',1,'Jeu']]]
 ];

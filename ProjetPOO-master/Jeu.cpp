@@ -18,14 +18,21 @@ class Jeu : public IAffichage {
 	public :
 		enum types {DIMACHAERUS = 1, RETIARIUS = 2, MURMILLO = 3, 
 				VELITE = 4, THRAEX = 5, SECUTOR = 6};
-	
+		
+		/*!
+		 * Constructeur explicite récupérant le dernier identifiant
+		 * de personnage en cours
+		*/
 		Jeu()
 		{
 			//màj le dernier idPerso courant
 			recupLastId();
 		}
 		
-		//récupère le dernier idPerso courant à partir du fichier
+		/*!
+		 * Procédure de récupération du dernier identifiant de personnage
+		 * en cours à partir du fichier lastIdPerso.txt
+		*/
 		void recupLastId(){
 			ifstream fichier;
 			fichier.open("lastIdPerso.txt");
@@ -39,7 +46,10 @@ class Jeu : public IAffichage {
 			fichier.close();
 		}
 		
-		//met à jour le dernier idPerso courant dans le fichier
+		/*!
+		 * Procédure de mise à jour du dernier identifiant de personnage
+		 * en cours dans le fichier lastIdPerso.txt
+		*/
 		void majLastId(int i){
 			ofstream fichier;
 			fichier.open("lastIdPerso.txt");
@@ -56,6 +66,9 @@ class Jeu : public IAffichage {
 			
 		}
 		
+		/*!
+		 * Procédure d'affichage du menu principal
+		*/
 		void afficherMenuPrincipal()
 		{
 			string vM;
@@ -97,6 +110,9 @@ class Jeu : public IAffichage {
 			}
 		}
 		
+		/*!
+		 * Procédure de création de nouveau personnage
+		*/
 		void creerPersonnage()
 		{
 			string nomPerso, nT;
@@ -129,6 +145,10 @@ class Jeu : public IAffichage {
 			afficherMenuPrincipal();//réaffichage du menu principal
 		}
 		
+		/*!
+		 * Procédure d'enregistrement du personnage nouvellement créé
+		 * dans le fichier archivePersos.txt
+		*/
 		void enregistrerNouveauPerso(int id, string nom, int type){
 			ofstream fichier;
 			fichier.open("archivePersos.txt", ofstream::app);
@@ -145,6 +165,10 @@ class Jeu : public IAffichage {
 				
 		}
 		
+		/*!
+		 * Procédure d'affichage d'informations, redéfinit celle de
+		 * l'interface IAffichage
+		*/
 		void afficherInfo()
 		{
 			cout << "\n***************" << endl;
@@ -159,6 +183,12 @@ class Jeu : public IAffichage {
 			}
 		}
 		
+		/*!
+		 * Procédure de lancement de la partie:
+		 * -# Séléction des personnages
+		 * -# Sélection du personnage ayant la main
+		 * -# Début du combat
+		*/
 		void commencerPartie()
 		{
 			cout << "******************************" << endl;
@@ -184,7 +214,7 @@ class Jeu : public IAffichage {
 					}
 					if(entrees[0]!="\0")
 					{	
-						//int s = stoi(entrees[3]);
+						//int s = stoi(entrees[3]); //C++11
 						int s = atoi(entrees[3].c_str());
 						switch(s)
 						{
@@ -307,6 +337,10 @@ class Jeu : public IAffichage {
 			}
 		}
 		
+		/*!
+		 * Fonction retournant si le joueur passé en paramètre est
+		 * le joueur ayant la main
+		*/
 		bool isJoueurCourant(int idPerso)
 		{
 			if (idPerso == joueurCourant_)
@@ -316,17 +350,26 @@ class Jeu : public IAffichage {
 				return false;
 			}	
 		}
-		
+		/*!
+		 * Fonction retournant l'identifiant du joueur ayant la main
+		*/
 		int getJoueurCourant()
 		{
 			return joueurCourant_;
 		}
 		
+		/*!
+		 * Mutateur du joueur courant
+		*/
 		void setJoueurCourant(int i)
 		{
 			joueurCourant_ = i;
 		}
 		
+		/*!
+		 * Procédure d'invocation de prendreCoup() en fonction
+		 * des paramètres passés
+		*/
 		void porterCoup(int idPerso, int idMembre){
 			int i = 0;
 			for(i; i<2; ++i)
@@ -343,6 +386,9 @@ class Jeu : public IAffichage {
 		int joueurCourant_, lastIdPerso_; //id du Personnage en train de jouer, id du dernier Personnage créé
 };
 
+/*!
+* Méthode MAIN
+*/
 /* *****************
  ****** MAIN *******
  ***************** */

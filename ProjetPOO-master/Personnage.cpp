@@ -40,6 +40,10 @@ class Personnage : public IAffichage
 				VELITE = 4, THRAEX = 5, SECUTOR = 6};
 		enum etats {POISON = 1, BLEED = 2, ROOT = 3};
 		
+		/*!
+		 * Constructeur explicite construisant un personnage
+		 * en fonction des paramètres passés
+		*/
 		Personnage(int id, string nom, int type)
 		{
 			id_ = id;
@@ -90,14 +94,41 @@ class Personnage : public IAffichage
 			}
 		};
 		
+		/*!
+		 * Accesseur à l'identifiant du personnage
+		*/
 		int getId(){ return id_; }
+		/*!
+		 * Mutateur de l'identifiant du personnage
+		*/
 		void setId(int id){ id_ = id; }
+		/*!
+		 * Accesseur au nombre de points de vie totaux du personnage
+		*/
 		int getPDV(){ return pdv_; }
+		/*!
+		 * Mutateur du nombre de points de vie totaux du personnage
+		*/
 		void setPDV(int p){ pdv_ = p; }
+		/*!
+		 * Accesseur au nom du personnage
+		*/
 		string getNom(){ return nom_; }
+		/*!
+		 * Mutateur du nom du personnage
+		*/
 		void setNom(string l){ nom_ = l; }
+		/*!
+		 * Accesseur au type du personnage
+		*/
 		Type* getType(){ return p_type; }
+		/*!
+		 * Accesseur à l'index du dernier effet ajouté à effetsActifs
+		*/
 		int getIndexLastEffet(){ return indexLastEffet_; }
+		/*!
+		 * Mutateur de l'index du dernier effet ajouté à effetsActifs
+		*/
 		void setIndexLastEffet(int e)
 		{ 
 			/* Tableau de correspondance
@@ -115,6 +146,9 @@ class Personnage : public IAffichage
 			} 
 		}
 		
+		/*!
+		 * Procédure pour créer et ajouter les membres au personnage
+		*/
 		void ajouterMembres()
 		{ 
 			BrasGauche* p_brasG = new BrasGauche();
@@ -132,6 +166,9 @@ class Personnage : public IAffichage
 			membres[5] = p_jambeD;
 		}
 		
+		/*!
+		 * Procédure pour ajouter un effet actif dans effetsActifs
+		*/
 		void ajouterEffetActif(int effet)
 		{
 			Effet* p_effet;
@@ -206,6 +243,10 @@ class Personnage : public IAffichage
 			}
 		}
 		
+		/*!
+		 * Procédure d'affichage d'informations, redéfinit celle de
+		 * l'interface IAffichage
+		*/
 		void afficherInfo()
 		{
 			cout << "Personnage " << nom_ << " :\n" << endl;
@@ -232,6 +273,10 @@ class Personnage : public IAffichage
 			}
 		}
 		
+		/*!
+		 * Procédure de calcul des dégâts reçus suite à un coup
+		 * sur le membre passé en paramètre
+		*/
 		void prendreCoup(int idMembreVise){
 			//if(this->membres[0].getId()==
 		}
