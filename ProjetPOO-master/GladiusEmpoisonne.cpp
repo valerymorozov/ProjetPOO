@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Arme.cpp"
 #include "Effet.cpp"
+#include "Empoisonnement.cpp"
 
 using namespace std;
 
@@ -13,7 +14,7 @@ class GladiusEmpoisonne : public Arme {
 				id_ = 3;
 				valeurDegats_ = 20;
 				libelle_ = "Gladius empoisonné";
-				/*effet_ =  passer pointeur */ //empoisonnement
+				effet_ = new Empoisonnement();
 		}
 		
 		int getId(){ Arme::getId(); }
@@ -22,13 +23,13 @@ class GladiusEmpoisonne : public Arme {
 		void setLibelle(string l) { Arme::setLibelle(l); }
 		int getValDeg(){ return valeurDegats_; }
 		void setValDeg(int v) { valeurDegats_ = v; }
-		Effet getEffet(){ return effet_; }
-		void setEffet(Effet e){ effet_ = e; }
+		Effet* getEffet(){ return effet_; }
+		void setEffet(Effet* e){ effet_ = e; }
 	
 	private :
 		int id_, valeurDegats_;
 		string libelle_;
-		Effet effet_;
+		Effet* effet_;
 };
 
 

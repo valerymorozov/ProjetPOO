@@ -9,6 +9,11 @@
 
 using namespace std;
 
+/*!
+* Classe Jeu
+* Implémente l'interface IAffichage
+*/
+
 class Jeu : public IAffichage {
 	public :
 		enum types {DIMACHAERUS = 1, RETIARIUS = 2, MURMILLO = 3, 
@@ -179,7 +184,8 @@ class Jeu : public IAffichage {
 					}
 					if(entrees[0]!="\0")
 					{	
-						int s = stoi(entrees[3]);
+						//int s = stoi(entrees[3]);
+						int s = atoi(entrees[3].c_str());
 						switch(s)
 						{
 							case DIMACHAERUS:

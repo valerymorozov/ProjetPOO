@@ -27,6 +27,11 @@ using namespace std;
  * Format d'enregistrement d'un Personnage dans le fichier archivePersos.txt
  * idPerso, nomPerso, idType
  */
+ 
+/*!
+* Classe Personnage
+* Implémente l'interface IAffichage
+*/
 
 class Personnage : public IAffichage 
 {

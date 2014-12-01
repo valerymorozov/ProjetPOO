@@ -1,0 +1,114 @@
+\hypertarget{class_effet}{\section{\-Effet \-Class \-Reference}
+\label{class_effet}\index{\-Effet@{\-Effet}}
+}
+\-Inheritance diagram for \-Effet\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_effet}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_effet_a509c2d845776b583280b4418585d9ec2}{get\-Id} ()
+\item 
+void \hyperlink{class_effet_a1e880a5364a175e90dae7cbfdc103e02}{set\-Id} (int id)
+\item 
+string \hyperlink{class_effet_a1817f59e4c17c91103ae4031868dfd97}{get\-Libelle} ()
+\item 
+void \hyperlink{class_effet_a8470c57c7d69b4023c5230cdca79631d}{set\-Libelle} (string l)
+\item 
+int \hyperlink{class_effet_ae98c2a33fcd29629e3c7cd6e8ab8fcd8}{get\-Nb\-Tours\-Max} ()
+\item 
+void \hyperlink{class_effet_a12959d98a93ca835aedd8b7ed84e5a61}{set\-Nb\-Tours\-Max} (int n)
+\item 
+virtual void \hyperlink{class_effet_afa8ada372b122c1447ee6ac51b551f6a}{afficher\-Info} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Classe mère \hyperlink{class_effet}{\-Effet}, tous les effets héritent de celle-\/ci \-Implémente l'interface \hyperlink{class_i_affichage}{\-I\-Affichage} 
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_effet_afa8ada372b122c1447ee6ac51b551f6a}{\index{\-Effet@{\-Effet}!afficher\-Info@{afficher\-Info}}
+\index{afficher\-Info@{afficher\-Info}!Effet@{\-Effet}}
+\subsubsection[{afficher\-Info}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf \-Effet\-::afficher\-Info} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}\label{class_effet_afa8ada372b122c1447ee6ac51b551f6a}
+\-Procédure d'affichage d'informations, redéfinit celle de l'interface \hyperlink{class_i_affichage}{\-I\-Affichage} 
+
+\-Implements \hyperlink{class_i_affichage_a6123c1cb9079f712b48c0b8bf62e14ef}{\-I\-Affichage}.
+
+\hypertarget{class_effet_a509c2d845776b583280b4418585d9ec2}{\index{\-Effet@{\-Effet}!get\-Id@{get\-Id}}
+\index{get\-Id@{get\-Id}!Effet@{\-Effet}}
+\subsubsection[{get\-Id}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Effet\-::get\-Id} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_effet_a509c2d845776b583280b4418585d9ec2}
+\-Accesseur à l'identifiant de l'effet 
+
+\-Reimplemented in \hyperlink{class_empoisonnement_aca251add204972489663e8a6a56525ac}{\-Empoisonnement}, \hyperlink{class_saignement_a57ccf17cade8c253a7ee99e7f816eb10}{\-Saignement}, and \hyperlink{class_immobilisation_a4ffaa8356838b9bc202e16136bed7c93}{\-Immobilisation}.
+
+\hypertarget{class_effet_a1817f59e4c17c91103ae4031868dfd97}{\index{\-Effet@{\-Effet}!get\-Libelle@{get\-Libelle}}
+\index{get\-Libelle@{get\-Libelle}!Effet@{\-Effet}}
+\subsubsection[{get\-Libelle}]{\setlength{\rightskip}{0pt plus 5cm}string {\bf \-Effet\-::get\-Libelle} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_effet_a1817f59e4c17c91103ae4031868dfd97}
+\-Accesseur au libellé l'effet 
+
+\-Reimplemented in \hyperlink{class_empoisonnement_a787da32b563d6f18bb8307d59bbfb9ec}{\-Empoisonnement}, \hyperlink{class_saignement_aca2c045c2faa9384b6cf25ec3c11af28}{\-Saignement}, and \hyperlink{class_immobilisation_a77ed10535746670f2e0cdfcf385884a2}{\-Immobilisation}.
+
+\hypertarget{class_effet_ae98c2a33fcd29629e3c7cd6e8ab8fcd8}{\index{\-Effet@{\-Effet}!get\-Nb\-Tours\-Max@{get\-Nb\-Tours\-Max}}
+\index{get\-Nb\-Tours\-Max@{get\-Nb\-Tours\-Max}!Effet@{\-Effet}}
+\subsubsection[{get\-Nb\-Tours\-Max}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Effet\-::get\-Nb\-Tours\-Max} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_effet_ae98c2a33fcd29629e3c7cd6e8ab8fcd8}
+\-Accesseur à la durée maximale, en tours, de l'effet 
+
+\-Reimplemented in \hyperlink{class_empoisonnement_a10bcef58e5f423cf1b957591787fb157}{\-Empoisonnement}, \hyperlink{class_saignement_a498bf00562314e4094be4004e5bc653a}{\-Saignement}, and \hyperlink{class_immobilisation_ae0baa3a4c8e7e39ba0646c5afda69ce8}{\-Immobilisation}.
+
+\hypertarget{class_effet_a1e880a5364a175e90dae7cbfdc103e02}{\index{\-Effet@{\-Effet}!set\-Id@{set\-Id}}
+\index{set\-Id@{set\-Id}!Effet@{\-Effet}}
+\subsubsection[{set\-Id}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Effet\-::set\-Id} (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_effet_a1e880a5364a175e90dae7cbfdc103e02}
+\-Mutateur de l'identifiant de l'effet 
+
+\-Reimplemented in \hyperlink{class_empoisonnement_a0bd14f04931bcd9f926036ab2ece8ce6}{\-Empoisonnement}, \hyperlink{class_saignement_af9d66877c7e2aff769b4bc48f4bb82e4}{\-Saignement}, and \hyperlink{class_immobilisation_a1b0d3098ec798b0c8d46ff51aa0c0db2}{\-Immobilisation}.
+
+\hypertarget{class_effet_a8470c57c7d69b4023c5230cdca79631d}{\index{\-Effet@{\-Effet}!set\-Libelle@{set\-Libelle}}
+\index{set\-Libelle@{set\-Libelle}!Effet@{\-Effet}}
+\subsubsection[{set\-Libelle}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Effet\-::set\-Libelle} (
+\begin{DoxyParamCaption}
+\item[{string}]{l}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_effet_a8470c57c7d69b4023c5230cdca79631d}
+\-Mutateur du libellé de l'effet 
+
+\-Reimplemented in \hyperlink{class_empoisonnement_a0ab7a1e8a917a0f050832819b3804a96}{\-Empoisonnement}, \hyperlink{class_saignement_a2c9f7ffb81aa8848564389580c4f7112}{\-Saignement}, and \hyperlink{class_immobilisation_a32e8e9379388f0a492fe0fd97ec9c304}{\-Immobilisation}.
+
+\hypertarget{class_effet_a12959d98a93ca835aedd8b7ed84e5a61}{\index{\-Effet@{\-Effet}!set\-Nb\-Tours\-Max@{set\-Nb\-Tours\-Max}}
+\index{set\-Nb\-Tours\-Max@{set\-Nb\-Tours\-Max}!Effet@{\-Effet}}
+\subsubsection[{set\-Nb\-Tours\-Max}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Effet\-::set\-Nb\-Tours\-Max} (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_effet_a12959d98a93ca835aedd8b7ed84e5a61}
+\-Mutateur de la durée maximale, en tours, de l'effet 
+
+\-Reimplemented in \hyperlink{class_empoisonnement_a52a3cc1746ccacb1c29e6bd8a2aecf94}{\-Empoisonnement}, \hyperlink{class_saignement_ae31708c65c109f4169d1e79fca31eade}{\-Saignement}, and \hyperlink{class_immobilisation_a2b4a2b1ee2ef7b0e11ca3cf92ec4caad}{\-Immobilisation}.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\-Projet\-P\-O\-O-\/master/\-Effet.\-cpp\end{DoxyCompactItemize}
