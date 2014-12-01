@@ -45,13 +45,15 @@ void \hyperlink{class_jeu_a40747c204660ad830d76378d0cbac1f0}{afficher\-Info} ()
 \item 
 void \hyperlink{class_jeu_a0258b4e17a825904fa41213351bcd811}{commencer\-Partie} ()
 \item 
+void \hyperlink{class_jeu_a818d55913d9330d81cce3f0497008ba3}{lancer\-Tour} (int j\-C)
+\item 
 bool \hyperlink{class_jeu_a3fe3cdfb2476146d904fd9800eb932f4}{is\-Joueur\-Courant} (int id\-Perso)
 \item 
 int \hyperlink{class_jeu_acc947eec44204b9f472a8b4b7fb41a25}{get\-Joueur\-Courant} ()
 \item 
 void \hyperlink{class_jeu_a88d92d04311a3bea94fe4c5972a4dec7}{set\-Joueur\-Courant} (int i)
 \item 
-void \hyperlink{class_jeu_a7869b56cb07ad313c2227a7d8c470701}{porter\-Coup} (int id\-Perso, int id\-Membre)
+void \hyperlink{class_jeu_a137f9060568729f2362074fe8794c5ab}{porter\-Coup} (int id\-Perso\-A\-T\-K, int id\-Membre)
 \end{DoxyCompactItemize}
 
 
@@ -129,21 +131,28 @@ void \hyperlink{class_jeu_a7869b56cb07ad313c2227a7d8c470701}{porter\-Coup} (int 
 \item[{int}]{id\-Perso}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_jeu_a3fe3cdfb2476146d904fd9800eb932f4}
-\-Fonction retournant si le joueur passé en paramètre est le joueur ayant la main \hypertarget{class_jeu_ac2dc12316aef3df5ffc04ace0d2ca8a3}{\index{\-Jeu@{\-Jeu}!maj\-Last\-Id@{maj\-Last\-Id}}
+\-Fonction retournant si le joueur passé en paramètre est le joueur ayant la main \hypertarget{class_jeu_a818d55913d9330d81cce3f0497008ba3}{\index{\-Jeu@{\-Jeu}!lancer\-Tour@{lancer\-Tour}}
+\index{lancer\-Tour@{lancer\-Tour}!Jeu@{\-Jeu}}
+\subsubsection[{lancer\-Tour}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Jeu\-::lancer\-Tour} (
+\begin{DoxyParamCaption}
+\item[{int}]{j\-C}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_jeu_a818d55913d9330d81cce3f0497008ba3}
+\-Procédure qui gère un tour \hypertarget{class_jeu_ac2dc12316aef3df5ffc04ace0d2ca8a3}{\index{\-Jeu@{\-Jeu}!maj\-Last\-Id@{maj\-Last\-Id}}
 \index{maj\-Last\-Id@{maj\-Last\-Id}!Jeu@{\-Jeu}}
 \subsubsection[{maj\-Last\-Id}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Jeu\-::maj\-Last\-Id} (
 \begin{DoxyParamCaption}
 \item[{int}]{i}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_jeu_ac2dc12316aef3df5ffc04ace0d2ca8a3}
-\-Procédure de mise à jour du dernier identifiant de personnage en cours dans le fichier last\-Id\-Perso.\-txt \hypertarget{class_jeu_a7869b56cb07ad313c2227a7d8c470701}{\index{\-Jeu@{\-Jeu}!porter\-Coup@{porter\-Coup}}
+\-Procédure de mise à jour du dernier identifiant de personnage en cours dans le fichier last\-Id\-Perso.\-txt \hypertarget{class_jeu_a137f9060568729f2362074fe8794c5ab}{\index{\-Jeu@{\-Jeu}!porter\-Coup@{porter\-Coup}}
 \index{porter\-Coup@{porter\-Coup}!Jeu@{\-Jeu}}
 \subsubsection[{porter\-Coup}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Jeu\-::porter\-Coup} (
 \begin{DoxyParamCaption}
-\item[{int}]{id\-Perso, }
+\item[{int}]{id\-Perso\-A\-T\-K, }
 \item[{int}]{id\-Membre}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_jeu_a7869b56cb07ad313c2227a7d8c470701}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_jeu_a137f9060568729f2362074fe8794c5ab}
 \-Procédure d'invocation de prendre\-Coup() en fonction des paramètres passés \hypertarget{class_jeu_afc8d47d5af8133e555e0e02641dc03c9}{\index{\-Jeu@{\-Jeu}!recup\-Last\-Id@{recup\-Last\-Id}}
 \index{recup\-Last\-Id@{recup\-Last\-Id}!Jeu@{\-Jeu}}
 \subsubsection[{recup\-Last\-Id}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Jeu\-::recup\-Last\-Id} (

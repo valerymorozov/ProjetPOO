@@ -167,6 +167,14 @@ class Personnage : public IAffichage
 		}
 		
 		/*!
+		 * Fonction qui retourne un membre en fonction du paramètre passé
+		*/
+		Membre* getMembre(int i)
+		{
+			return membres[i];
+		}
+		
+		/*!
 		 * Procédure pour ajouter un effet actif dans effetsActifs
 		*/
 		void ajouterEffetActif(int effet)

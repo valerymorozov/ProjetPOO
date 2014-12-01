@@ -122,10 +122,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>recupPerso</b> ()</td
 void&#160;</td><td class="memItemRight" valign="bottom"><b>chargementPersos</b> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a40747c204660ad830d76378d0cbac1f0">afficherInfo</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a0258b4e17a825904fa41213351bcd811">commencerPartie</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a818d55913d9330d81cce3f0497008ba3">lancerTour</a> (int jC)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a3fe3cdfb2476146d904fd9800eb932f4">isJoueurCourant</a> (int idPerso)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#acc947eec44204b9f472a8b4b7fb41a25">getJoueurCourant</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a88d92d04311a3bea94fe4c5972a4dec7">setJoueurCourant</a> (int i)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a7869b56cb07ad313c2227a7d8c470701">porterCoup</a> (int idPerso, int idMembre)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_jeu.html#a137f9060568729f2362074fe8794c5ab">porterCoup</a> (int idPersoATK, int idMembre)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Classe <a class="el" href="class_jeu.html">Jeu</a> Implémente l'interface <a class="el" href="class_i_affichage.html">IAffichage</a> </p>
@@ -292,6 +293,24 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>chargementPersos</b> 
 
 </div>
 </div>
+<a class="anchor" id="a818d55913d9330d81cce3f0497008ba3"></a><!-- doxytag: member="Jeu::lancerTour" ref="a818d55913d9330d81cce3f0497008ba3" args="(int jC)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_jeu.html#a818d55913d9330d81cce3f0497008ba3">Jeu::lancerTour</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>jC</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Procédure qui gère un tour </p>
+
+</div>
+</div>
 <a class="anchor" id="ac2dc12316aef3df5ffc04ace0d2ca8a3"></a><!-- doxytag: member="Jeu::majLastId" ref="ac2dc12316aef3df5ffc04ace0d2ca8a3" args="(int i)" -->
 <div class="memitem">
 <div class="memproto">
@@ -310,15 +329,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>chargementPersos</b> 
 
 </div>
 </div>
-<a class="anchor" id="a7869b56cb07ad313c2227a7d8c470701"></a><!-- doxytag: member="Jeu::porterCoup" ref="a7869b56cb07ad313c2227a7d8c470701" args="(int idPerso, int idMembre)" -->
+<a class="anchor" id="a137f9060568729f2362074fe8794c5ab"></a><!-- doxytag: member="Jeu::porterCoup" ref="a137f9060568729f2362074fe8794c5ab" args="(int idPersoATK, int idMembre)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_jeu.html#a7869b56cb07ad313c2227a7d8c470701">Jeu::porterCoup</a> </td>
+          <td class="memname">void <a class="el" href="class_jeu.html#a137f9060568729f2362074fe8794c5ab">Jeu::porterCoup</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>idPerso</em>, </td>
+          <td class="paramname"><em>idPersoATK</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -394,7 +413,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>chargementPersos</b> 
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 1 2014 18:15:03 for Gladiateurs by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 1 2014 21:51:31 for Gladiateurs by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
